@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Minhas Caronas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list [virtualScroll]="caronas">
+    <ion-item-sliding *virtualItem="let carona">
+      <button ion-item (click)="atualizarTarefa(carona)">
+        <caronas-list-item [carona]="carona"></caronas-list-item>
+      </button>
+
+      <ion-item-options>
+        <button ion-button clear icon-only (click)="deletarCarona(carona)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+<ion-fab bottom right>
+    <button ion-fab color='primary' (click)="adicionarCarona()">
+        <ion-icon name='add'></ion-icon>
+    </button>
+</ion-fab>

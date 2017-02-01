@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{carona.titulo != undefined ? carona.titulo : 'Minha carona'}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>
+              Titulo
+            </ion-label>
+            <ion-input name="titulo" [(ngModel)]="carona.titulo" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>
+                Data
+              </ion-label>
+              <ion-input type="date" name="data" [(ngModel)]="carona.data" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label floating>
+                  Hora
+                </ion-label>
+                <ion-input type="time" name="hora" [(ngModel)]="carona.hora" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label floating>
+                    Número de vagas
+                  </ion-label>
+                  <ion-input type="number" name="numeroVagas" [(ngModel)]="carona.numeroVagas" required></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label floating>
+                      Local de saída
+                    </ion-label>
+                    <ion-input name="localSaida" [(ngModel)]="carona.localSaida" required></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label floating>
+                        Local de chegada
+                      </ion-label>
+                      <ion-input name="localChegada" [(ngModel)]="carona.localChegada" required></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                  <ion-row>
+                    <ion-col>
+                      <ion-item>
+                        <ion-label floating>
+                          Valor
+                        </ion-label>
+                        <ion-input type="number" name="valor" [(ngModel)]="carona.valor" required></ion-input>
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button full clear (click)="salvarCarona()">
+            Salvar Carona
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
